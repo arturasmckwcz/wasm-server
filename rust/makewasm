@@ -1,0 +1,4 @@
+rust_file=$1
+file_name="${rust_file%.rs}"
+wasm_file="$file_name.wasm"
+rustc +nightly --target wasm32-unknown-unknown -O ./$rust_file -o ../wasmfiles/$wasm_file
