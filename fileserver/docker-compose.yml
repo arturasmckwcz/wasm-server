@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  fileserver:
+    container_name: fileserver
+    image: fileserver
+    build:
+      context: .
+      args:
+        PORT_FS: ${PORT_FS:-8090}
+    ports:
+      - ${PORT_FS:-8090}:${PORT_FS:-8090}
